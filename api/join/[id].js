@@ -15,7 +15,7 @@ function escapeHtml(s) {
 }
 
 function getJoinPageHtml(id, challengeName, requestUrl) {
-  const title = challengeName ? `Join "${escapeHtml(challengeName)}"` : 'Join on Bttr Together';
+  const title = challengeName ? `Join "${escapeHtml(challengeName)}"` : 'Join a challenge';
   const pageUrl = requestUrl || `${BASE_URL}/join/${id}`;
   return `<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
