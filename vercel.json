@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/join/:id", "destination": "/api/join/:id" },
-    { "source": "/add-me/:id", "destination": "/api/add-me/:id" }
+    { "source": "/add-me/:id", "destination": "/api/add-me/:id" },
+    { "source": "/payout-return", "destination": "/payout-return.html" }
   ]
 }
