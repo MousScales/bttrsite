@@ -6,8 +6,9 @@ In **Vercel Dashboard → bttrsite project → Settings → Environment Variable
 
 | Variable | Description |
 |----------|-------------|
-| `SUPABASE_URL` | Supabase project URL (e.g. `https://xxxx.supabase.co`) – use same value as in Bttr Together app |
-| `SUPABASE_ANON_KEY` | Supabase anonymous/public key – use same value as in Bttr Together app |
+| `SUPABASE_URL` | Supabase project URL (e.g. `https://xxxx.supabase.co`) |
+| `SUPABASE_SERVICE_KEY` | **Recommended.** Service role key so the join page can read `goal_lists.name` even if RLS restricts anon. From Supabase → Project Settings → API. |
+| `SUPABASE_ANON_KEY` | Alternative if you don’t use service key; then `goal_lists` must allow public/anon SELECT on `name` (or RLS will block and the title stays “Join a challenge”). |
 
 This site’s `/join/:id` API only needs Supabase; Stripe and `PORT` are for the app/backend, not bttrsite.
 

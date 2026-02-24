@@ -1,3 +1,6 @@
+// Load .env when present (e.g. local dev); Vercel injects env vars so this is a no-op in production
+require('dotenv').config();
+
 const { createClient } = require('@supabase/supabase-js');
 
 const BASE_URL = process.env.VERCEL_URL
@@ -23,15 +26,22 @@ function getJoinPageHtml(id, challengeName, requestUrl) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${escapeHtml(title)}</title>
+  <link rel="icon" href="${IMAGE_URL}" type="image/png" />
+  <link rel="apple-touch-icon" href="${IMAGE_URL}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="You're invited to join a challenge. Open in the app to join." />
   <meta property="og:image" content="${IMAGE_URL}" />
+  <meta property="og:image:url" content="${IMAGE_URL}" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:url" content="${pageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="You're invited to join a challenge." />
   <meta name="twitter:image" content="${IMAGE_URL}" />
+  <meta name="twitter:image:alt" content="Bttr Together" />
   <style>
     * { box-sizing: border-box; }
     body {
@@ -72,7 +82,9 @@ function getJoinPageHtml(id, challengeName, requestUrl) {
 }
 
 module.exports = async (req, res) => {
-  const id = req.query.id;
+  // id can come from query (rewrite) or path
+  const pathMatch = (req.url || req.originalUrl || '').match(/\/join\/([^/?]+)/);
+  const id = (req.query && req.query.id) || (pathMatch && pathMatch[1]) || '';
   if (!id) {
     res.status(404).setHeader('Content-Type', 'text/html').end(
       getJoinPageHtml('', null, `${BASE_URL}/join`)
@@ -82,18 +94,24 @@ module.exports = async (req, res) => {
 
   let challengeName = null;
   const supabaseUrl = process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
-  if (supabaseUrl && supabaseAnonKey) {
+  // Prefer service key so we can read goal_lists even if RLS restricts anon
+  const supabaseKey =
+    process.env.SUPABASE_SERVICE_KEY ||
+    process.env.SUPABASE_ANON_KEY ||
+    process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+  if (supabaseUrl && supabaseKey) {
     try {
-      const supabase = createClient(supabaseUrl, supabaseAnonKey);
-      const { data } = await supabase
+      const supabase = createClient(supabaseUrl, supabaseKey);
+      const { data, error } = await supabase
         .from('goal_lists')
         .select('name')
         .eq('id', id)
         .maybeSingle();
-      if (data && data.name) challengeName = data.name;
+      if (!error && data && typeof data.name === 'string' && data.name.trim()) {
+        challengeName = data.name.trim();
+      }
     } catch (_) {
-      // keep challengeName null, use fallback title
+      // keep challengeName null
     }
   }
 
