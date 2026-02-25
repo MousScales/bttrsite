@@ -3,69 +3,394 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Better Together – Connect, collaborate, grow</title>
-  <link rel="icon" href="/fsf.png" type="image/png">
-  <link rel="apple-touch-icon" href="/fsf.png">
+  <meta name="theme-color" content="#0f0e0d">
+  <title>Bttr Together | Level Up With Friends</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <a href="#" class="logo">Better Together</a>
-    <nav class="nav">
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#download" class="btn-cta">Get the app</a>
-    </nav>
+  <header class="top-nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="logo.png" alt="Bttr Together logo" />
+        </div>
+        <span class="brand-name">Bttr Together</span>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#download">Download</a>
+        <div class="nav-store-badges" aria-label="Download the app">
+          <a class="store-badge" href="#download" aria-label="Download on the App Store">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <a class="store-badge" href="#download" aria-label="Download on the App Store">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu" id="menu-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Better <em>Together</em></h1>
-      <p class="hero-tagline">Connect with the people who matter. Plan, share, and grow—together.</p>
-      <a href="#download" class="btn-primary">Download Better Together</a>
-    </section>
-
-    <section id="features" class="features">
-      <h2>Why Better Together?</h2>
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">✦</span>
-          <h3>Stay in sync</h3>
-          <p>Shared calendars, tasks, and notes so everyone’s on the same page.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">✦</span>
-          <h3>Real connection</h3>
-          <p>Designed for real life—family, friends, and teams—not just notifications.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon" aria-hidden="true">✦</span>
-          <h3>Simple & private</h3>
-          <p>No clutter, no ads. Your data stays yours.</p>
-        </article>
+    <section class="hero" id="home">
+      <div class="hero-inner container">
+        <div class="hero-copy">
+        <h1>Bttr <em>Together</em></h1>
+        <p class="hero-subhead">Level up with friends</p>
+        <p class="hero-tagline">Better together is an app where you and your friends can level up and keep yourself accountable with cash bets, dares for the losers, and more!
+          -”make better if possible this is just basic draft”</p>
+        <a class="store-badge" href="#download" aria-label="Download on the App Store">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-frame hero-phone hero-phone-left">
+          <img src="assets/1.png" alt="Bttr Together app – goal tracking" loading="lazy" />
+        </div>
+        <div class="phone-frame hero-phone hero-phone-right">
+          <img src="assets/3.png" alt="Bttr Together app – group goals and status" loading="lazy" />
+        </div>
+      </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <h2>Built for togetherness</h2>
-      <p>Better Together helps you coordinate with the people you care about—from weekend plans to big goals. Less scrolling, more doing, together.</p>
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="include-section container" id="explore">
+      <div class="section-header">
+        <h2>Explore the Bttr Together experience.</h2>
+        <p class="section-header-muted">Tap any card to see a preview of each feature.</p>
+      </div>
+      <div class="include-layout">
+        <div class="include-visual">
+          <div class="include-preview">
+            <img id="include-preview-img" src="assets/4.png" alt="Bets preview" loading="lazy" />
+          </div>
+          <div class="include-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="include-cards">
+          <button type="button" class="include-card active" data-img="assets/4.png" aria-label="Bets">
+            <h3>Bets</h3>
+            <p>Put money on the line with friends. Set stakes, track who wins, and keep everyone accountable.</p>
+          </button>
+          <button type="button" class="include-card" data-img="assets/3.png" aria-label="Tracking">
+            <h3>Tracking</h3>
+            <p>Group goals, progress grids, and time left in the day—see who’s on track at a glance.</p>
+          </button>
+          <button type="button" class="include-card" data-img="assets/1.png" aria-label="Posts">
+            <h3>Posts</h3>
+            <p>Share updates, wins, and check-ins with your group so everyone stays in the loop.</p>
+          </button>
+          <button type="button" class="include-card" data-img="assets/3.png" aria-label="Dares">
+            <h3>Dares</h3>
+            <p>Dares for the losers. When someone misses a goal, the group decides the consequence.</p>
+          </button>
+        </div>
+      </div>
     </section>
 
-    <section id="download" class="download">
-      <h2>Get started</h2>
-      <p>Better Together is coming soon. Leave your email and we’ll notify you at launch.</p>
-      <form class="signup" action="#" method="post">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <button type="submit">Notify me</button>
-      </form>
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="features" class="features-section container">
+      <div class="why-layout">
+        <div class="why-visual">
+          <div class="why-phone-wrap">
+            <button type="button" class="why-nav why-prev" aria-label="Previous screen" id="why-prev">
+              <span class="why-nav-dot"></span>
+            </button>
+            <div class="phone-frame why-phone">
+              <img id="why-phone-img" src="assets/1.png" alt="Bttr Together app – goals and tracking" loading="lazy" />
+            </div>
+            <button type="button" class="why-nav why-next" aria-label="Next screen" id="why-next">
+              <span class="why-nav-dot"></span>
+            </button>
+          </div>
+          <div class="why-dots" aria-hidden="true" id="why-dots">
+            <button type="button" class="why-dot active" aria-label="Screen 1" data-index="0"></button>
+            <button type="button" class="why-dot" aria-label="Screen 2" data-index="1"></button>
+            <button type="button" class="why-dot" aria-label="Screen 3" data-index="2"></button>
+          </div>
+        </div>
+        <div class="why-copy">
+          <p class="why-kicker">Why Bttr Together?</p>
+          <h2 class="why-headline">Small steps. Lasting impact.</h2>
+          <p class="why-text">Goals, bets, and dares with friends—so accountability stays close even on busy days.</p>
+          <span class="why-chip">Coming soon</span>
+          <ul class="why-list">
+            <li>Real-time progress with your group</li>
+            <li>Bets, dares, and shared goals</li>
+            <li>Built for real life—not just notifications</li>
+          </ul>
+          <div class="why-stat-cards">
+            <div class="stat-card">
+              <span class="stat-label">Accountability</span>
+              <span class="stat-value">Built in</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Goals</span>
+              <span class="stat-value">Shared</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Daily Reminders</span>
+              <span class="stat-value">On</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="about" class="about-section">
+      <div class="about-layout container">
+        <div class="about-content">
+          <h2 class="about-headline">Built for togetherness</h2>
+          <p class="about-intro">We're built for real life—friends, groups, and the goals you care about. Every feature is designed so you stay accountable <em>together</em>.</p>
+          <p class="about-intro">From shared goals to bets and dares, we keep it simple: plan with your crew, track progress in one place, and level up with the same people who show up day one.</p>
+          <div class="about-stat-cards">
+            <div class="about-stat-card">
+              <span class="about-stat-value">Built in</span>
+              <span class="about-stat-label">Accountability</span>
+            </div>
+            <div class="about-stat-card">
+              <span class="about-stat-value">Shared</span>
+              <span class="about-stat-label">Goals</span>
+            </div>
+            <div class="about-stat-card">
+              <span class="about-stat-value">On</span>
+              <span class="about-stat-label">Daily Reminders</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <img src="logo.png" alt="Bttr Together" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="ratings-section" id="ratings">
+      <div class="ratings-wrap container">
+        <div class="ratings-laurel left" aria-hidden="true"></div>
+        <div class="ratings-content">
+          <div class="ratings-stars" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <h2>5-star rated by our community</h2>
+          <div class="ratings-inline">
+            <span class="rating-icon apple" aria-hidden="true"></span>
+            <span class="rating-score">5/5</span>
+          </div>
+          <div class="store-badges-row center">
+            <a class="store-badge" href="#download" aria-label="Download on the App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+          </div>
+        </div>
+        <div class="ratings-laurel right" aria-hidden="true"></div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© Better Together. Made with care.</p>
+  <footer class="footer" id="footer">
+    <span id="download" aria-hidden="true"></span>
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark">
+            <img src="logo.png" alt="Bttr Together logo" />
+          </div>
+          <span class="brand-name">Bttr Together</span>
+        </div>
+        <p class="footer-download">Download Bttr Together</p>
+        <div class="store-badges-row">
+          <a class="store-badge" href="#download" aria-label="Download on the App Store">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+      <div class="footer-col footer-get-started">
+        <h4>Get started</h4>
+        <p class="footer-get-started-text">Better Together is coming soon. Leave your email and we'll notify you at launch.</p>
+        <form class="signup footer-signup" action="#" method="post">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button type="submit">Notify me</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-tagline container">
+      <p class="footer-tagline-text">Level up with friends.</p>
+    </div>
+    <div class="footer-bottom container">
+      <span class="copyright">© 2026 Bttr Together. All rights reserved.</span>
+      <div class="footer-social-icons">
+        <a href="#" aria-label="Instagram" class="icon instagram"></a>
+        <a href="#" aria-label="TikTok" class="icon tiktok"></a>
+      </div>
+    </div>
   </footer>
+
+  <div class="modal-overlay" id="download-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-heading" aria-modal="true">
+      <div class="modal-accent" aria-hidden="true"></div>
+      <button type="button" class="modal-close" aria-label="Close modal" id="modal-close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg>
+      </button>
+      <div class="modal-body">
+        <p class="modal-kicker">Coming soon</p>
+        <h2 class="modal-heading" id="modal-heading">Get started</h2>
+        <p class="modal-text">Better Together is coming soon. Leave your email and we'll notify you at launch.</p>
+        <form class="modal-signup" action="#" method="post">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button type="submit">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var menuToggle = document.getElementById('menu-toggle');
+      var navLinks = document.getElementById('nav-links');
+      var topNav = document.querySelector('.top-nav');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('open');
+        });
+      }
+      if (topNav) {
+        function onScroll() {
+          topNav.classList.toggle('scrolled', window.scrollY > 12);
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+      }
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var targetId = anchor.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          if (targetId === '#download') {
+            e.preventDefault();
+            var modal = document.getElementById('download-modal');
+            if (modal) {
+              modal.classList.add('open');
+              modal.setAttribute('aria-hidden', 'false');
+              if (navLinks) navLinks.classList.remove('open');
+            }
+            return;
+          }
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (navLinks) navLinks.classList.remove('open');
+          }
+        });
+      });
+
+      var downloadModal = document.getElementById('download-modal');
+      var modalCloseBtn = document.getElementById('modal-close');
+      function closeDownloadModal() {
+        if (downloadModal) {
+          downloadModal.classList.remove('open');
+          downloadModal.setAttribute('aria-hidden', 'true');
+        }
+      }
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeDownloadModal);
+      if (downloadModal) {
+        downloadModal.addEventListener('click', function (e) {
+          if (e.target === downloadModal) closeDownloadModal();
+        });
+      }
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && downloadModal && downloadModal.classList.contains('open')) {
+          closeDownloadModal();
+        }
+      });
+
+      // Explore section: tap card to update preview image
+      var includeCards = document.querySelectorAll('.include-card');
+      var includePreview = document.getElementById('include-preview-img');
+      var includeDots = document.querySelectorAll('.include-dots .dot');
+      if (includeCards.length && includePreview) {
+        includeCards.forEach(function (card) {
+          card.addEventListener('click', function () {
+            includeCards.forEach(function (c) { c.classList.remove('active'); });
+            card.classList.add('active');
+            var img = card.getAttribute('data-img');
+            if (img) {
+              includePreview.src = img;
+              includePreview.alt = (card.getAttribute('aria-label') || 'Feature') + ' preview';
+            }
+            if (includeDots.length) {
+              includeDots.forEach(function (dot) { dot.classList.remove('active'); });
+              var idx = Array.prototype.indexOf.call(includeCards, card);
+              if (idx >= 0 && includeDots[idx]) includeDots[idx].classList.add('active');
+            }
+          });
+        });
+      }
+
+      // Why section: phone carousel (prev/next + dots)
+      var whySlides = ['assets/1.png', 'assets/3.png', 'assets/4.png'];
+      var whyImg = document.getElementById('why-phone-img');
+      var whyDots = document.querySelectorAll('#why-dots .why-dot');
+      var whyPrevBtn = document.getElementById('why-prev');
+      var whyNextBtn = document.getElementById('why-next');
+      var whyIndex = 0;
+
+      function whyGoTo(index) {
+        whyIndex = (index + whySlides.length) % whySlides.length;
+        if (whyImg) {
+          whyImg.src = whySlides[whyIndex];
+          whyImg.alt = 'Bttr Together app – screen ' + (whyIndex + 1);
+        }
+        if (whyDots.length) {
+          whyDots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === whyIndex);
+          });
+        }
+      }
+
+      if (whyPrevBtn) whyPrevBtn.addEventListener('click', function () { whyGoTo(whyIndex - 1); });
+      if (whyNextBtn) whyNextBtn.addEventListener('click', function () { whyGoTo(whyIndex + 1); });
+      if (whyDots.length) {
+        whyDots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            var i = parseInt(dot.getAttribute('data-index'), 10);
+            if (!isNaN(i)) whyGoTo(i);
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
