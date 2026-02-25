@@ -494,11 +494,10 @@ a:hover {
 /* Why Bttr Together? – two-column layout */
 .why-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 380px) minmax(280px, 1fr);
+  grid-template-columns: minmax(280px, 1fr) minmax(240px, 380px);
   gap: 48px;
   align-items: center;
   justify-content: center;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -590,7 +589,7 @@ a:hover {
 }
 
 .why-copy {
-  padding: 0 0 0 8px;
+  padding: 0 8px 0 0;
 }
 
 .why-kicker {
@@ -742,18 +741,19 @@ a:hover {
   }
 }
 
-/* About – Built for togetherness (two-column + logo) */
+/* About – Built for togetherness (3 cards) */
 .about-section {
   padding: 64px 0;
-  background: #161412;
+  background: var(--bg);
+}
+
+.creator-section {
+  padding-top: 24px;
+  padding-bottom: 64px;
+  background: var(--bg);
 }
 
 .about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -781,6 +781,52 @@ a:hover {
 .about-intro em {
   font-style: italic;
   color: var(--text);
+}
+
+.about-feature-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 1.75rem;
+}
+
+.about-feature-icon {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.about-feature-icon-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.about-feature-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-feature-icon-title {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about-feature-icon-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 .about-stat-cards {
@@ -815,36 +861,131 @@ a:hover {
   color: var(--text-muted);
 }
 
-.about-visual {
-  border-radius: 18px;
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 16px 48px var(--shadow);
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* About the creator – two-column layout */
+.about-creator {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
 }
 
-.about-visual img {
+.creator-section .about-creator {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.about-creator-heading {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.about-creator-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about-creator-layout .about-creator-heading {
+  margin-top: 0;
+}
+
+.about-creator-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.about-creator-photo {
   width: 100%;
-  max-width: 280px;
+  max-width: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px var(--shadow);
+  background: var(--surface);
+}
+
+.about-creator-photo img {
+  width: 100%;
   height: auto;
-  object-fit: contain;
+  display: block;
+  vertical-align: middle;
+}
+
+.about-creator-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.about-creator-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-creator-role {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.about-creator-bio {
+  min-width: 0;
+}
+
+.about-creator-bio p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.about-creator-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.about-creator-bio strong {
+  color: var(--text);
+}
+
+.about-creator-bio em {
+  font-style: italic;
+  color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
-  .about-layout {
+  .about-creator-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 1.5rem;
+    text-align: center;
   }
 
-  .about-visual {
-    order: -1;
-    aspect-ratio: 16/10;
-    max-width: 400px;
-    margin: 0 auto;
+  .about-creator-left {
+    order: 1;
+  }
+
+  .about-creator-bio {
+    order: 2;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-feature-icons {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .about-stat-cards {
