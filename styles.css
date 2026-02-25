@@ -306,9 +306,61 @@ a:hover {
   transform: rotate(6deg) translateY(-8px);
 }
 
+/* Mobile-only hero CTA and discover link (Huda-style) */
+.hero-mobile-cta {
+  display: none;
+  justify-content: center;
+}
+
+.hero-discover {
+  display: none;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.discover-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 10px 24px var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: bounce-scroll 1.8s ease-in-out infinite;
+}
+
+.discover-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.discover-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(4px); }
+  60% { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discover-link {
+    animation: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
-    padding: 2.5rem 0 4rem;
+    padding: 2.5rem clamp(1rem, 6vw, 1.5rem) 4rem;
+    gap: 30px;
   }
 
   .hero-inner {
@@ -321,10 +373,29 @@ a:hover {
     max-width: 100%;
   }
 
+  .hero-copy .store-badge {
+    display: none;
+  }
+
   .hero-visual {
     order: -1;
     gap: 3.5rem;
     margin-left: 0;
+    margin-top: 0;
+  }
+
+  .hero-mobile-cta {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+
+  .hero-mobile-cta .store-badge img {
+    height: 44px;
+  }
+
+  .hero-discover {
+    display: flex;
+    margin-top: 14px;
   }
 
   .phone-frame {
@@ -337,6 +408,21 @@ a:hover {
 
   .hero-phone-right {
     transform: rotate(4deg) translateY(-4px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 2.5rem clamp(1rem, 6vw, 1.5rem) 4.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+  .hero-copy .hero-subhead {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+  .hero-tagline {
+    font-size: 1rem;
   }
 }
 
@@ -1154,9 +1240,11 @@ a:hover {
     font-size: clamp(26px, 6vw, 36px);
   }
   .ratings-laurel {
-    width: 80px;
-    height: 140px;
-    opacity: 0.5;
+    display: none;
+  }
+  .section-divider {
+    margin: 16px auto 0;
+    width: 92vw;
   }
 }
 
