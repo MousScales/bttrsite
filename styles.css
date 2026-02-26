@@ -482,6 +482,22 @@ a:hover {
 
   .hero-visual {
     margin-top: 24px;
+    gap: 1.25rem;
+    padding: 0 8px;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .hero .phone-frame {
+    width: min(140px, 38vw);
+  }
+
+  .hero-phone-left {
+    transform: rotate(-3deg) translateY(2px);
+  }
+
+  .hero-phone-right {
+    transform: rotate(3deg) translateY(-2px);
   }
 
   .hero-copy .hero-tagline {
